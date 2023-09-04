@@ -6,34 +6,39 @@
 
 This is a front-end-app providing conversion from a number to words, what is sometimes required for invoices, contracts etc. It currently supports numbers from one to Nonillion plus two digits after separation point (optionally).
 
+This app uses converted words string provided by conv-api.
+
 ## Screenshot
 
 ![ntwc](resources/assets/images/ntwc.gif)
 
 ## Usage
-Insert any number with length 1-30 digits plus 1-2 digits separated by 'dot' for tenths and hundredths (optionally), e.g. 20 or 20.99 and click _Let convert_. To clear both input fields choose _Clear fields_.
+Insert any number with length 1-30 digits (optionally: plus 1-2 digits separated by 'dot' for tenths and hundredths), e.g. 20 or 20.99 and click _Convert_. To clear both input fields choose _Clear fields_.
 
-## Architecture
-The conversion provides class _NWConv_:
+For security reasons the last field should stay empty (as anty-bot protection).
 
-app \ Custom \ [NWConv.php](/app/Custom/NWConv.php)
+## Laravel quasi-module
+This app is configured as separated Laravel module in /src under _conv_ folder. He's ServiceProvider is registered in the main AppServiceProvider as well as the routes config file _routes_web.php_ in the main RouteServiceProvider.
 
-The length of the input number can be extended by adding new values in the _$names_ array and changing validating rule in the controller to the appropriate value (currently: 30):
+Finally, the name 'Conv' has been added to namespaces and paths under 'psr-4' in composer.json.
 
-app \ Http \ Controllers \ [ConvController.php](/app/Http/Controllers/ConvController.php)
+## Hexagonal architecture
+Further, it is Hexagonal-structured:
+- _App_ - for http related controllers, requests, views requiring access to the application.
+- _Domain_ - DTOs, entities/models, services and interfaces (primary/secondary ports).
+- _Infra_ - implementations of secondary ports of the domain (secondary adapters).
 
-## Tests
-The application has been tested using PHPUnit tests:
+The controllers (App) use injected interfaces (primary ports) of the domain and so they are decoupled from the domain concrete services.
+Likewise, the domain services use only interfaces (secondary ports) and know nothing about their implementations (secondary adapters).
 
-tests \ Feature \ [nvconvTest.php](/tests/Feature/nvconvTest.php)
+All dependencies are provided by module ConvServiceProvider, that contains bindings interfaces -> specific classes.
 
 ## What was used
 
-- Laravel 9
-- PHP 8
-- Bootstrap 5
+- Laravel 10
+- PHP 8.2
+- Tailwindcss
 - Javascript
-- PHPUnit
 
 ## Working version
 
