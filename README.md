@@ -10,7 +10,7 @@ This app uses converted words string provided by conv-api.
 
 ## Screenshot
 
-![conv-front-end](_docs/conv-front-end.png.gif)
+![conv-front-end](_docs/conv-front-end.png)
 
 ## Usage
 Insert any number with length 1-30 digits (optionally: plus 1-2 digits separated by 'dot' for tenths and hundredths), e.g. 20 or 20.99 and click _Convert_. To clear both input fields choose _Clear fields_.
