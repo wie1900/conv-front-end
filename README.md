@@ -6,7 +6,7 @@
 
 This is a front-end-app providing conversion from a number to words, what is sometimes required for invoices, contracts etc. It currently supports numbers from one to Nonillion plus two digits after separation point (optionally).
 
-This app uses converted words string provided by conv-api.
+This app uses converted words string provided by [conv-api](https://api.deadygo.com/api/conv/words).
 
 ## Screenshot
 
