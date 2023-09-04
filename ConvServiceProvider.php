@@ -2,6 +2,10 @@
 
 namespace Conv;
 
+use Conv\Domain\PortsIn\ConvServiceInterface;
+use Conv\Domain\PortsOut\ConverterInterface;
+use Conv\Domain\Services\ConvService;
+use Conv\Infra\Api\ApiConverter;
 use Illuminate\Support\ServiceProvider;
 
 class ConvServiceProvider extends ServiceProvider
@@ -11,6 +15,8 @@ class ConvServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->app->bind(ConvServiceInterface::class, ConvService::class);
+        $this->app->bind(ConverterInterface::class, ApiConverter::class);
     }
 
     /**
