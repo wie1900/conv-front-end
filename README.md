@@ -18,7 +18,7 @@ Insert any number with length 1-30 digits (optionally: plus 1-2 digits separated
 For security reasons the last field should stay empty (as anty-bot protection).
 
 ## Laravel quasi-module
-This app is configured as separated Laravel module in /src under _conv_ folder. He's ServiceProvider is registered in the main AppServiceProvider as well as the routes config file _routes_web.php_ in the main RouteServiceProvider.
+This app is configured as separated Laravel module in /src under _conv_ folder. It's ServiceProvider is registered in the main AppServiceProvider as well as the routes config file _routes_web.php_ in the main RouteServiceProvider.
 
 Finally, the name 'Conv' has been added to namespaces and paths under 'psr-4' in composer.json.
 
