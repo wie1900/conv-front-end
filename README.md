@@ -31,7 +31,7 @@ Further, it is Hexagonal-structured:
 The controllers (App) use injected interfaces (primary ports) of the domain and so they are decoupled from the domain concrete services.
 Likewise, the domain services use only interfaces (secondary ports) and know nothing about their implementations (secondary adapters).
 
-All dependencies are provided by module ConvServiceProvider, that contains bindings interfaces -> specific classes.
+All dependencies are provided by module ConvServiceProvider (registered in the main AppServiceProvider), that contains bindings interfaces -> specific classes.
 
 ## What was used
 
