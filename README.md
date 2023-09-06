@@ -2,7 +2,7 @@
 
 
 
-# Number to Words Converter (Front-End)
+# Number to Words Converter (Front-End) <img src="https://github.com/wie1900/conv-front-end/blob/main/_docs/Front.png" height="70"/>
 
 This is a front-end-app providing conversion from a number to words, what is sometimes required for invoices, contracts etc. It currently supports numbers from one to Nonillion plus two digits after separation point (optionally).
 
