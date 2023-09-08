@@ -23,9 +23,9 @@ Finally, the name `Conv` has been added to namespaces and paths under 'psr-4' in
 
 ### Hexagonal architecture
 Further, it is Hexagonal-structured:
-- _App_ - for http related controllers, requests, views requiring access to the application
-- _Domain_ - DTOs, domain entities/models, services and interfaces (primary/secondary ports, here `PortsIn`)
-- _Infra_ - implementations of secondary ports of the domain (secondary adapters, here `PortsOut`)
+- `App` - for http related controllers, requests, views requiring access to the application
+- `Domain` - DTOs, domain entities/models, services and interfaces (primary/secondary ports, here `PortsIn`)
+- `Infra` - implementations of secondary ports of the domain (secondary adapters, here `PortsOut`)
 
 The controllers (App) use injected interfaces (primary ports, here `PortsIn`) of the domain and so they are decoupled from the domain specific services.
 Likewise, the domain services use only interfaces (secondary ports, here `PortsOut`) and know nothing about their implementations (secondary adapters, folder `Infra`).
